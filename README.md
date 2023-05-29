@@ -110,7 +110,7 @@ The following software is required:
 
 3. Accept the terms and condition, Choose a photo.
 
-4. Select Analyze with Amazon Rekognition. You will see the results below the photo you have uploaded.
+4. Select 'Analyze with Amazon Rekognition' or 'Analyze with Amazon Textract'. You will see the results below the photo you have uploaded.
 ### Clean-up
 
 If you attended an instructor-led hosted workshop, you don't need to do the clean-up of services, as the sandbox accounts will be deleted after the end of the event.

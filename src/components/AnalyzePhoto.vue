@@ -16,7 +16,8 @@
             <!-- This button only appears when the user has selected a photo that is under 5MB. -->
             <button v-show="!noFileSelected" class="button" @click="analysePhotowithRekognition">Analyze with Amazon
                 Rekognition</button>
-
+            <button v-show="!noFileSelected" class="button" @click="analysePhotowithTextract">Analyze with Amazon
+                Textract</button>
         </section>
 
         <main id="container">
@@ -25,6 +26,7 @@
                 <figure v-show="!noFileSelected" id="photo-container">
                     <img id="userPhoto" :src="userPhoto" class="photoFrame" width="720" />
                 </figure>
+
                 <!-- This list only appears when the Amazon Rekognition API has been successfully called -->
                 <section v-if="rekognitionSuccess" class="text-container instructions" id="rekognition">
                     <h2>Object Detection with <span class="text-gradient">Amazon Rekognition</span></h2>
@@ -43,7 +45,26 @@
                         </tbody>
                     </table>
                 </section>
-
+                <!-- This list only appears when the Amazon Textract API has been successfully called -->
+			<section v-if="textractSuccess" class="text-container" id="textract">
+				<!-- Decide how to display detected text here -->
+				<p class="instructions">
+				<h2>Text Extraction with <span class="text-gradient">Amazon Textract</span></h2>
+				<!-- This is a for loop that displays every object's label and its confidence -->
+				<table style="width:100%">
+					<tr>
+						<th>Text</th>
+						<th>Confidence</th>
+					</tr>
+					<template v-for="text in textExtracted.Blocks">
+						<tr v-if="text.BlockType === 'LINE'">
+							<td><span class="text-gradient">{{ text.Text }}</span></td>
+							<td>({{ parseFloat(text.Confidence).toFixed(1) }}%)</td>
+						</tr>
+					</template>
+				</table>
+				</p>
+			</section>
             </article>
         </main>
     </div>
@@ -51,6 +72,7 @@
 
 <script setup>
 import { RekognitionClient, DetectLabelsCommand } from "@aws-sdk/client-rekognition";
+import { TextractClient, DetectDocumentTextCommand } from "@aws-sdk/client-textract";
 </script>
 
 <script>
@@ -66,6 +88,9 @@ export default {
             userPhoto: null,                // The image src for the user-selected photo
             confidence: 70,                 // Default confidence level to send in the Rekognition query parameters
             numLabels: 10,                  // Default number of labels to return in the Rekognition query parameters
+            textractClient: null,           // The Textract Client
+            textractSuccess: false,         // If the Textract Client returned text from an Analyze Document call
+            textExtracted: null,            // What text was extracted?
         };
     },
     methods: {
@@ -172,6 +197,49 @@ export default {
         },
         // -------------------- 
 
+        // analyze photo with Amazon Textract
+        // https://docs.aws.amazon.com/AWSJavaScriptSDK/v3/latest/clients/client-textract/
+        async analysePhotowithTextract() {
+            // Is the Textract client initialised? (maybe this is the first time we've called it)
+            if (!this.textractClient) {
+                // Create a new Textract client. 
+                // This will require a file in the root folder of the project called .env.local with specific values
+                // These are unique to each IAM account and should never be embedded in code or uploaded to GitHub
+                // Follow the instructions in Workshop Studio or the repo README for more details
+                // https://vitejs.dev/guide/env-and-mode.html
+                try {
+                    const client = new TextractClient({
+                        region: import.meta.env.VITE_AWS_REGION,
+                        credentials: {
+                            accessKeyId: import.meta.env.VITE_AWS_ACCESS_KEY_ID,
+                            secretAccessKey: import.meta.env.VITE_AWS_SECRET_ACCESS_KEY,
+                        },
+                    });
+                    console.log(client)
+                    this.textractClient = client
+                } catch (e) {
+                    console.log(e)
+                    alert("Error creating Textract Client, please see console for details")
+                }
+            }
+
+            // Create a params object with the document bytes from the image loaded earlier
+            const params = {
+                Document: { Bytes: this.uimage_bytes },
+            };
+
+            // Call the DetectDocumentTextCommand and save the results
+            try {
+                const query = new DetectDocumentTextCommand(params)
+                const response = await this.textractClient.send(query)
+                console.log(response);
+                this.textExtracted = response;
+                this.textractSuccess = true;
+            } catch (e) {
+                console.log(e)
+                alert("There was an error calling extract text, please check the console for details.")
+            }
+        }
 
     },
 }
