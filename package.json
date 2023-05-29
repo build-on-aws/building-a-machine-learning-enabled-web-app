@@ -1,0 +1,20 @@
+{
+  "name": "ml-workshop",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@aws-sdk/client-rekognition": "^3.337.0",
+    "@aws-sdk/client-textract": "^3.337.0",
+    "vue": "^3.2.47"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.1.0",
+    "vite": "^4.3.2"
+  }
+}

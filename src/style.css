@@ -1,0 +1,166 @@
+:root {
+  font-family: AmazonEmberLight, Helvetica Neue Light, Helvetica Neue,
+      Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  /* color-scheme: light dark; */
+  color: #000000de;
+  background-color: #f6f6f6;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --accent: 124, 58, 237;
+  --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      #da62c4 30%,
+      white 60%
+  );
+}
+
+main {
+  margin: auto;
+  padding: 1.5rem;
+  max-width: 90ch;
+}
+
+.text-gradient {
+  background-image: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  background-position: 0%;
+}
+
+html {
+  font-family: AmazonEmberLight, Helvetica Neue Light, Helvetica Neue,
+      Helvetica, Arial, sans-serif;
+  background-color: #f6f6f6;
+}
+code {
+  font-family: AmazonEmberLight, Helvetica Neue Light, Helvetica Neue,
+      Helvetica, Arial, sans-serif;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  /* place-items: center; */
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+.instructions {
+  line-height: 1.6;
+  margin: 1rem 0;
+  border: 1px solid rgba(var(--accent), 25%);
+  color: black;
+  text-align: left;
+  background-color: white;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.instructions code {
+  font-size: 0.875em;
+  font-weight: bold;
+  background: rgba(var(--accent), 12%);
+  color: rgb(var(--accent));
+  border-radius: 4px;
+  padding: 0.3em 0.45em;
+}
+
+.link-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+  gap: 1rem;
+  padding: 0;
+}
+
+.instructions strong {
+  color: rgb(var(--accent));
+}
+
+button {
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: blueviolet;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 30px 2px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  background-color: rgb(106, 29, 181);
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: left;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.photoFrame {
+  border: 5px solid blueviolet;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#photo-container {
+  position: relative;
+}
+
+#text-container,
+#placeholder {
+  width: 100%;
+  height: fit-content;
+  text-align: left;
+}
+
+#placeholder {
+  visibility: hidden;
+}
