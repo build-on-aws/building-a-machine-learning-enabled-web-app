@@ -39,7 +39,7 @@ The following software is required:
 1. Create a folder, open your terminal at the newly created folder location. Clone the repo by typing the following command in the terminal -
    
    ```
-   git clone "https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app"
+   git clone "https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app.git"
    ```
 
 2. Navigate inside the `building-a-machine-learning-enabled-web-app` folder
@@ -58,7 +58,7 @@ The following software is required:
 
 4. Open the `building-a-machine-learning-enabled-web-app` in Visual Studio Code. Here is how the directory would look -
    
-   ![directory](../building-a-machine-learning-enabled-web-app/assets/directory.png)
+   ![directory](/assets/directory.png)
 
 
 ### Credentials
@@ -67,13 +67,13 @@ The following software is required:
 
 1. We need to provide the AWS Credentials. The keys can be found on the **Get AWS CLI credentials** sidebar link on the Workshop Studio page.
 
-   ![AWS CLI credentials](../building-a-machine-learning-enabled-web-app/assets/getcred.png)
+   ![AWS CLI credentials](/assets/getcred.png)
 
    > Save these access keys safely with you. We will need it to configure the .env.local file
 
 2. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-   ![env.local](../building-a-machine-learning-enabled-web-app/assets/envLocal.png)
+   ![env.local](/assets/envLocal.png)
 
 3. Save the file and close it.
 
@@ -96,7 +96,7 @@ The following software is required:
 11. Copy the Access key and Secret access key.
 12. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-    ![env.local](../building-a-machine-learning-enabled-web-app/assets/envLocal.png)
+    ![env.local](/assets/envLocal.png)
 13. Save the file and close it.
 
 ### Running the app
@@ -108,6 +108,9 @@ The following software is required:
 
 2. Open the localhost website (http://localhost:3000 is the default, link may vary)
 
+3. Accept the terms and condition, Choose a photo.
+
+4. Select Analyze with Amazon Rekognition. You will see the results below the photo you have uploaded.
 ### Clean-up
 
 If you attended an instructor-led hosted workshop, you don't need to do the clean-up of services, as the sandbox accounts will be deleted after the end of the event.
