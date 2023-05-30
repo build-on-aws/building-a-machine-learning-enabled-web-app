@@ -39,7 +39,7 @@ The following software is required:
 1. Create a folder, open your terminal at the newly created folder location. Clone the repo by typing the following command in the terminal -
    
    ```
-   git clone "https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app.git"
+   git clone https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app.git
    ```
 
 2. Navigate inside the `building-a-machine-learning-enabled-web-app` folder
