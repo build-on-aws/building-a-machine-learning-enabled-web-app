@@ -64,7 +64,7 @@ The following software is required:
 
 ### Credentials
 
-**If in hosted workshop**: 
+**If in a hosted workshop**: 
 
 1. We need to provide the AWS Credentials. The keys can be found on the **Get AWS CLI credentials** sidebar link on the Workshop Studio page.
 
@@ -75,7 +75,7 @@ The following software is required:
 
 2. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-   <img width="452" alt="envLocal" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/e53f0b39-dae9-4433-b1eb-480bc1218e49">
+   <img width="714" alt="env1" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/8325182d-b3bc-4d08-9034-3d79299a2cdd">
 
 
 3. Save the file and close it.
@@ -99,7 +99,9 @@ The following software is required:
 11. Copy the Access key and Secret access key.
 12. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-    <img width="714" alt="env1" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/8325182d-b3bc-4d08-9034-3d79299a2cdd">
+    
+    <img width="452" alt="envLocal" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/e53f0b39-dae9-4433-b1eb-480bc1218e49">
+    
 13. Save the file and close it.
 
 ### Running the app
