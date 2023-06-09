@@ -58,7 +58,8 @@ The following software is required:
 
 4. Open the `building-a-machine-learning-enabled-web-app` in Visual Studio Code. Here is how the directory would look -
    
-   ![directory](/assets/directory.png)
+   ![directory](https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/6b553b06-103b-4497-aa7a-cd43918ca7bf)
+
 
 
 ### Credentials
@@ -67,13 +68,15 @@ The following software is required:
 
 1. We need to provide the AWS Credentials. The keys can be found on the **Get AWS CLI credentials** sidebar link on the Workshop Studio page.
 
-   ![AWS CLI credentials](/assets/getcred.png)
+   ![getcred](https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/151a68d1-3ec3-49ec-9125-14fdb85d3698)
+
 
    > Save these access keys safely with you. We will need it to configure the .env.local file
 
 2. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-   ![env.local](/assets/envLocal.png)
+   <img width="452" alt="envLocal" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/e53f0b39-dae9-4433-b1eb-480bc1218e49">
+
 
 3. Save the file and close it.
 
