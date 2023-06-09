@@ -58,7 +58,7 @@ The following software is required:
 
 4. Open the `building-a-machine-learning-enabled-web-app` in Visual Studio Code. Here is how the directory would look -
    
-   ![directory](/assets/directory.png)
+   ![directory](https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/37f4d493-a992-46d0-b1bd-edf6598e8a56)
 
 
 ### Credentials
@@ -73,7 +73,7 @@ The following software is required:
 
 2. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-   ![env.local](/assets/envLocal.png)
+   ![getcred](https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/8cdac684-d695-46a4-90d5-b18965fde3b2)
 
 3. Save the file and close it.
 
@@ -96,7 +96,7 @@ The following software is required:
 11. Copy the Access key and Secret access key.
 12. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-    ![env.local](/assets/envLocal.png)
+    <img width="452" alt="envLocal" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/5772c950-58e9-47b8-a029-ff62ed5d8c8f">
 13. Save the file and close it.
 
 ### Running the app
