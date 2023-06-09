@@ -99,7 +99,7 @@ The following software is required:
 11. Copy the Access key and Secret access key.
 12. Open the **.env.local** file located in the root folder of `building-a-machine-learning-enabled-web-app`. Add the access keys from the above step into this file - 
    
-    ![env.local](/assets/envLocal.png)
+    <img width="714" alt="env1" src="https://github.com/build-on-aws/building-a-machine-learning-enabled-web-app/assets/15520369/8325182d-b3bc-4d08-9034-3d79299a2cdd">
 13. Save the file and close it.
 
 ### Running the app
