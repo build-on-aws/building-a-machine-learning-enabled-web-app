@@ -9,8 +9,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@aws-sdk/client-rekognition": "^3.337.0",
-    "@aws-sdk/client-textract": "^3.337.0",
+    "@aws-sdk/client-rekognition": "^3.438.0",
+    "@aws-sdk/client-textract": "^3.438.0",
     "vue": "^3.2.47"
   },
   "devDependencies": {
