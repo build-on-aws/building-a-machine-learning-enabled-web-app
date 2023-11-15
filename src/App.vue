@@ -1,17 +1,35 @@
 <script setup>
-import AnalyzePhoto from "./components/AnalyzePhoto.vue";
+import { onBeforeMount } from "vue";
+import { initImages } from "./ImageState";
+import AppHeader from "./components/AppHeader.vue";
+import Instructions from "./components/Instructions.vue";
+import AddLocalImages from "./components/AddLocalImages.vue";
+import ImageList from "./components/ImageList.vue";
+import ImageAnalysis from "./components/ImageAnalysis.vue";
+import AppFooter from "./components/AppFooter.vue";
+
+onBeforeMount(async () => {
+  await initImages();
+});
 </script>
 
 <template>
-  <main>
-    <h2><span class="text-gradient">AWS Machine Learning</span> Workshop</h2>
-    <p class="instructions">
-      This web app analyses photos using Amazon Rekognition and Amazon Textract APIs:<br/>
-      Please ensure the photo is 5MB or less in size.<br/>
-      Please do <strong>not</strong> choose a photo that contains any people, faces, or sensitive data.<br/>
-      Please do <strong>not</strong> choose an offensive photo.<br/>
-      <i>If you have no photos on this device, some photos are supplied in the <code>public</code> folder.</i><br/>     
-    </p>      
-    <AnalyzePhoto/>
-  </main>
+  <v-app>
+    <AppHeader />
+    <v-main>
+      <v-container>
+        <v-row>
+          <Instructions />
+          <AddLocalImages />
+        </v-row>
+        <v-row>
+          <ImageList />
+        </v-row>
+        <v-row>
+          <ImageAnalysis />
+        </v-row>
+      </v-container>
+    </v-main>
+    <AppFooter />
+  </v-app>
 </template>
